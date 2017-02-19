@@ -1,12 +1,10 @@
 //Car Assignment February 6th 2017
-public class Car {
 
-	
-		
+public class Car {
 		
 
 		//Attributes
-		int gear = 6;
+		int gear = 1;
 		int location;
 		int speed = 0;
 		final int DESTINATION = 250;
@@ -17,7 +15,7 @@ public class Car {
 		void reverseGear(){
 			gear = -1;
 		}
-		void gearUP(){ 
+		void gearUp(){ 
 			if (gear == 6){
 				System.out.println("ERROR: Car in highest gear, cannot increase");
 			
@@ -30,6 +28,17 @@ public class Car {
 			
 		}
 		
+		void gearDown(){
+			if (gear == -1){
+				System.out.println("ERROR: Car in lowest gear, cannot decrease");
+				
+			}else if (gear == 1){
+				System.out.println("ERROR: Cannot decrease gear");
+			}else{
+				gear = gear - 1;
+			}
+		}
+		
 		int reportGear(){
 			return gear;
 		}
@@ -38,7 +47,7 @@ public class Car {
 			return location;
 		}
 		
-		int reportRemaining(){
+		int reportRemaning(){
 			return DESTINATION - location;
 		}
 	
@@ -53,10 +62,17 @@ public class Car {
 			}
 		}
 		
-		boolean isArrived = location >= DESTINATION;
+		boolean isArrived(){
+			if (location >= DESTINATION){
+				return false;
+			}
+			else {
+				return true;
+			}
+		
 		
 	
-
+		}
 }
 
 
